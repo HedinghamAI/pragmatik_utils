@@ -13,3 +13,4 @@ def read_all_rows(file, contains_headers=True, delimiter=",", quotechar='"'):
                 headers = ["{}".format(i) for i in range(0, len(row))]
             row_dict = dict(zip(headers, row))
             data.append(row_dict)
+    return data

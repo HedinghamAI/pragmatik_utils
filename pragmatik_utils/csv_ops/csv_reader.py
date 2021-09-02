@@ -1,5 +1,6 @@
 import csv
 
+
 def read_all_rows(file, contains_headers=True, delimiter=",", quotechar='"'):
     data = []
     with open(file, "r") as fin:

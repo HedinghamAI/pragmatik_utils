@@ -26,9 +26,9 @@ def fetch_images(image_list):
     Parameters:
         image_urls: list(tuple(file_name, image_url))
     """
-    with tqdm(total=len(image_urls)) as pbar:
+    with tqdm(total=len(image_list)) as pbar:
         with ThreadPoolExecutor(max_workers=8) as ex:
-            futures = [ex.submit(download_img, url, file_name) for file_name, url in image_urls]
+            futures = [ex.submit(__download_img, url, file_name) for file_name, url in image_list]
             for future in as_completed(futures):
                 # result = future.result()
                 pbar.update(1)

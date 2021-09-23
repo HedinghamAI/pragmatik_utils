@@ -7,8 +7,6 @@ from tqdm import tqdm
 
 def __download_page(url, file_path):
     try:
-        if os.path.exists(file_path):
-            return
         r = requests.get(url, stream=True)
         if r.status_code == 200:
             with open(file_path, 'w') as f:
